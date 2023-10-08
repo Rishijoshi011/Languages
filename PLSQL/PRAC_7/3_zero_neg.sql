@@ -1,0 +1,45 @@
+DECLARE
+
+    NEG_BAL EXCEPTION;
+    ZERO_BAL EXCEPTION;
+    
+    BALANCE DEPOSIT.BAL%TYPE;
+    ANO DEPOSIT.ACC_NO%TYPE;
+
+    FE_BAL DEPOSIT.BAL%TYPE;
+    FE_ANO DEPOSIT.ACC_NO%TYPE;
+
+BEGIN
+
+    DBMS_OUTPUT.PUT_LINE('Enter account number');
+    ANO := :ANO;
+
+    DBMS_OUTPUT.PUT_LINE('Enter amount to debit');
+    BALANCE := :BALANCE;
+
+    SELECT BAL,ACC_NO INTO FE_BAL,FE_ANO FROM DEPOSIT WHERE ACC_NO = ANO;
+
+    BALANCE := FE_BAL - BALANCE;
+
+    IF  BALANCE < 0 THEN
+        RAISE NEG_BAL;
+    END IF;
+
+    IF FE_BAL = 0 THEN
+        RAISE ZERO_BAL;
+    END IF;
+
+    UPDATE DEPOSIT SET BAL = BALANCE WHERE ACC_NO = ANO;
+
+EXCEPTION
+
+    WHEN NEG_BAL THEN
+        DBMS_OUTPUT.PUT_LINE('You do not have sufficient balance');
+
+    WHEN ZERO_BAL THEN
+        DBMS_OUTPUT.PUT_LINE('Zero balance');
+END;
+
+-- SELECT * FROM DEPOSIT;
+
+-- INSERT INTO DEPOSIT VALUES('Emma','Los Santos',0,'6743','emma@gmail.com',69834);
