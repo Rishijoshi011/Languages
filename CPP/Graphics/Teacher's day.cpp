@@ -1,0 +1,79 @@
+#include<graphics.h>
+#include<iostream>
+#include<dos.h>
+	using namespace std;
+ int main()
+{
+	int x,y;
+	initwindow(900,600);
+	 for(x=200;x<=830;x++)
+	{
+	 	putpixel(x-100,500,BLUE);
+	 	delay(2);
+	}
+	 for(x=200;x<=600;x++)
+	{
+	 	putpixel(100,x-100,RED);
+	 	delay(2);
+	}
+	 for(x=200;x<=600;x++)
+	{
+		putpixel(730,x-100,RED);
+		delay(2);
+	}
+	 for(x=200;x<=830;x++)
+	{
+		putpixel(x-100,100,BLUE);
+		delay(2);
+	} 
+	settextstyle(1,0,6);
+	outtextxy(340,200,"G");
+	delay(300);
+	outtextxy(400,200,"P");
+	delay(300);
+	outtextxy(155,260,"P");
+	delay(300);
+	outtextxy(200,260,"O");
+	delay(300);
+	outtextxy(260,260,"R");
+	delay(300);
+	outtextxy(320,260,"B");
+	delay(300);
+	outtextxy(380,260,"A");
+	delay(300);
+	outtextxy(440,260,"N");
+	delay(300);
+	outtextxy(500,260,"D");
+	delay(300);
+	outtextxy(560,260,"A");
+	delay(300);
+	outtextxy(620,260,"R");
+	delay(300);
+	settextstyle(1,0,2);
+	outtextxy(580,400,"C");
+	delay(300);
+	outtextxy(605,400,"r");
+	delay(300);
+	outtextxy(618,400,"e");
+	delay(300);
+	outtextxy(633,400,"a");
+	delay(300);
+	outtextxy(649,400,"t");
+	delay(300);
+	outtextxy(660,400,"e");
+	delay(300);
+	outtextxy(676,400,"d");
+	delay(300);
+	settextstyle(1,0,1);
+	outtextxy(620,425,"b");
+	delay(300);
+	outtextxy(639,425,"y");
+	delay(300);
+	settextstyle(1,0,2);
+	outtextxy(618,442,"R");
+	delay(300);
+	outtextxy(644,442,"J");
+	delay(300);	
+	getch();
+	closegraph();
+}
