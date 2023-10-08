@@ -1,0 +1,42 @@
+#include<iostream>
+#include<string.h>
+
+	using namespace std;
+
+	class name
+{
+	int l;
+	char *fnm;	
+
+	public:
+		name() : l(0) {}
+		name(char *x)
+	{
+		l = strlen(x);
+		fnm = new char[l+1];
+		strcpy(fnm,x);
+	}
+	 void print()
+	{
+		cout << "Name is : " << fnm << endl; 
+	}
+	 void add(name a,name b);
+};
+	void name::add(name a, name b)
+{
+	l = strlen(a.fnm) + strlen(b.fnm);
+	fnm = new char[l+1];
+	strcpy(fnm,a.fnm);
+	strcat(fnm,b.fnm);
+}
+	int main()
+{
+    system("COLOR 0B");
+    name n1("Rishi ");
+    name n2("Joshi");
+	name n3;
+    n3.add(n1,n2);
+    n1.print();
+    n2.print();
+    n3.print();
+}
