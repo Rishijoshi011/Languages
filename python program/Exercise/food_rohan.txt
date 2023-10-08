@@ -1,0 +1,2 @@
+[2022-01-20 21:52:54.107881] :- burger and cocacola[2022-01-20 22:14:47.155210] :- rice with fish
+[2022-01-21 15:51:04.039118] :- Apple with grap juice        
