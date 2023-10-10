@@ -45,7 +45,6 @@ public:
         }
         else
         {
-            return Matrix(0, 0);
             Matrix result(row, column);
             for (int i = 0; i < row; i++)
             {
@@ -67,7 +66,6 @@ public:
         }
         else
         {
-            return Matrix(0, 0);
             Matrix result(row, column);
             for (int i = 0; i < row; i++)
             {
