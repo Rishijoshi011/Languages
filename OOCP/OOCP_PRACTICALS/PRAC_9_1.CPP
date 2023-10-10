@@ -36,25 +36,47 @@ public:
         }
     }
 
-    void addition(const Matrix &m1, const Matrix &m2, Matrix &result)
+    Matrix operator+(Matrix &m)
     {
-        for (int i = 0; i < row; i++)
+        if ((row != m.row) || (column != m.column))
         {
-            for (int j = 0; j < column; j++)
+            cout << "Matrix Dimension are not same" << endl;
+            return Matrix(0, 0);
+        }
+        else
+        {
+            return Matrix(0, 0);
+            Matrix result(row, column);
+            for (int i = 0; i < row; i++)
             {
-                result.mat[i][j] = m1.mat[i][j] + m2.mat[i][j];
+                for (int j = 0; j < column; j++)
+                {
+                    result.mat[i][j] = mat[i][j] + m.mat[i][j];
+                }
             }
+            return result;
         }
     }
 
-    void subtraction(const Matrix &m1, const Matrix &m2, Matrix &result)
+    Matrix operator-(Matrix &m)
     {
-        for (int i = 0; i < row; i++)
+        if ((row != m.row) && (column != m.column))
         {
-            for (int j = 0; j < column; j++)
+            cout << "Matrix Dimension are not same" << endl;
+            return Matrix(0, 0);
+        }
+        else
+        {
+            return Matrix(0, 0);
+            Matrix result(row, column);
+            for (int i = 0; i < row; i++)
             {
-                result.mat[i][j] = m1.mat[i][j] - m2.mat[i][j];
+                for (int j = 0; j < column; j++)
+                {
+                    result.mat[i][j] = this->mat[i][j] - m.mat[i][j];
+                }
             }
+            return result;
         }
     }
 };
@@ -62,16 +84,16 @@ public:
 int main()
 {
     Matrix m(2, 2);
-    Matrix m2(2, 2);
+    Matrix m2(3, 3);
     Matrix sum(2, 2);
 
     m.set();
     m2.set();
 
-    sum.addition(m, m2, sum);
+    sum = m + m2;
     sum.get();
 
-    sum.subtraction(m, m2, sum);
+    sum = m - m2;
     sum.get();
 
     return 0;
