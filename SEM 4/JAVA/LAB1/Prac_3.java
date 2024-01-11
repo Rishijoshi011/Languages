@@ -13,7 +13,7 @@ public class Prac_3 {
         int num2 = sc.nextInt();
         int num3 = sc.nextInt();
 
-        Using nested if
+       // Using nested if
         if (num > num2) {
             if (num > num3) {
                 System.out.println(num + ": is Greatest");
