@@ -21,5 +21,7 @@ public class Person {
         Person p2 = new Person("Chandler", 32, 7000);
         p1.Display();
         p2.Display();
+
+        sc.close();
     }
 }
