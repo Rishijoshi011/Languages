@@ -22,10 +22,10 @@ public class StudentsAvg {
 
     String determineRank() {
         totalMarks /= noOfSubjects.length;
-        if(totalMarks >= 80 && totalMarks <= 100) {}
-        else if (totalMarks >= 60 && totalMarks <= 79) { return "Honours"; }
-        else if (totalMarks >= 50 && totalMarks <= 59) { return "First Division"; }
-        else if (totalMarks >= 40 && totalMarks <= 49) { return "Second Division"; }
+        if(totalMarks >= 80 && totalMarks <= 100) { return "Honours";}
+        else if (totalMarks >= 60 && totalMarks <= 79) { return "First Division"; }
+        else if (totalMarks >= 50 && totalMarks <= 59) {return "Second Division"; }
+        else if (totalMarks >= 40 && totalMarks <= 49) { return "Third Division"; }
         else if (totalMarks >= 0 && totalMarks <= 39) { return "Fail"; }
         return " ";
     }
