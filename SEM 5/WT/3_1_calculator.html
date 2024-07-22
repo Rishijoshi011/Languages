@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Calculator </title>
+    </head>
+    <style>
+        button{
+            width: 60px;
+        }
+    </style>
+    <body>
+        <table width="100px" height="200px" align="center">
+            <tr>
+                <td>
+                    <input type="number" name="num" id="num"
+                        placeholder="num 1">
+                    <input type="number" name="num2" id="num2"
+                        placeholder="num 2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="result()" id="add">+</button>
+                    <button type="button" onclick="result()" id="sub">-</button>
+                    <button type="button" onclick="result()" id="mul">*</button>
+                    <button type="button" onclick="result()"
+                        id="divi">/</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Result is: </span>
+                    <label name="result" id="result"> 0 </label>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function result() {
+                const num = document.getElementById('num');
+                const num2 = document.getElementById('num2');
+                const add_btn = document.getElementById('add');
+                const sub_btn = document.getElementById('sub');
+                const mul_btn = document.getElementById('mul');
+                const divi_btn = document.getElementById('divi');
+                const result = document.getElementById('result');
+
+                add_btn.addEventListener('click', () => {
+                    result.innerText =  Number(num.value) +  Number(num2.value);
+                });
+                
+                sub_btn.addEventListener('click', () => {
+                    result.innerText =  Number(num.value) -  Number(num2.value);
+                });
+
+                mul_btn.addEventListener('click', () => {
+                    result.innerText =  Number(num.value) *  Number(num2.value);
+                });
+
+                divi_btn.addEventListener('click', () => {
+                    result.innerText =  Number(num.value) /  Number(num2.value);
+                });
+            }
+        </script>
+    </body>
+</html>

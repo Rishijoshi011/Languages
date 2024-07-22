@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Area of Shape </title>
+    </head>
+    <style>
+        button {
+            width: 120px;
+        }
+    </style>
+    <body>
+        <table width="500px" height="200px" align="center">
+            <tr>
+                <td>
+                    <input type="number" name="num" id="num" placeholder="Radius / length">
+                    <input type="number" name="num2" id="num2" placeholder="breadth">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="result()" id="cir">Area of Circle</button>
+                    <button type="button" onclick="result()" id="tri">Area of Triangle</button>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Result is: </span>
+                    <label name="result" id="result"> 0 </label>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function result() {
+                const num = document.getElementById('num').value
+                const num2 = document.getElementById('num2').value
+                const result = document.getElementById('result');
+                const cir = document.getElementById('cir');
+                const tri = document.getElementById('tri');
+
+                
+                cir.addEventListener('click', () => {
+                    result.innerText = 3.14 * Number(num) * Number(num)
+                });
+                
+                tri.addEventListener('click', () => {
+                    result.innerText = (num * num2) / 2
+                });
+            
+
+               
+            }
+        </script>
+    </body>
+</html>

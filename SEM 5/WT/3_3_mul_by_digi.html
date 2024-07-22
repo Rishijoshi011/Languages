@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Area of Shape </title>
+    </head>
+    <style>
+        button {
+            width: 120px;
+        }
+    </style>
+    <body>
+        <table width="500px" height="200px" align="center">
+            <tr>
+                <td>
+                    <input type="number" name="num" id="num" placeholder="Enter a Number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="result()" id="ans">Get Answer</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Result is: </span>
+                    <label name="result" id="result"> 0 </label>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function result() {
+                let num = document.getElementById('num').value
+                const result = document.getElementById('result');
+                const ans = document.getElementById('ans');
+                num = Number(num);
+                
+                var temp = num % 10;
+                num = Math.floor(num / Number(10));
+                console.log(temp);
+                console.log(num);
+                ans.addEventListener('click', () => {
+                    result.innerText = (num ** Number(temp));
+                });
+                
+            
+
+               
+            }
+        </script>
+    </body>
+</html>
