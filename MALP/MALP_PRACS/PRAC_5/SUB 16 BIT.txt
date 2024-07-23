@@ -1,0 +1,31 @@
+;Name :- Rishi Joshi 
+;Enrollment :- 031
+
+MVI H,20H
+MVI L,50H
+MOV A,M
+
+MVI L,52H
+
+SUB M
+
+MVI L,54H
+MOV M,A
+
+MVI L,51H
+MOV A,M
+
+MVI L,53H
+
+SUB M
+
+MVI L,55H
+MOV M,A
+
+HLT	
+
+FLAGS : Z = 1
+	S = 0
+	P = 1
+	C = 0
+	AC = 1

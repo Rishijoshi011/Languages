@@ -1,0 +1,17 @@
+LXI H,0000H 
+MVI A,00H 
+MVI B,05H ; COUNT
+
+;-------------------------------;
+
+BACK:CMP M
+JNC MAX
+MOV A,M
+MAX: INX H
+
+DCR B
+JNZ BACK
+
+MOV M,A
+
+HLT

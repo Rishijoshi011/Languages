@@ -1,0 +1,24 @@
+LXI H,0000H
+MVI A,00H ; 
+MOV D,A ; EVEN
+MOV E,A ; ODD
+MVI C,05H ; COUNT
+
+;-------------------------
+
+BACK: MOV A,M
+RRC
+JC ODD
+INR D
+JMP EVEN
+INR A
+
+ODD: INR E
+EVEN: INX H;
+
+DCR C
+JNZ BACK
+MOV M,D
+INX H
+MOV M,E
+HLT

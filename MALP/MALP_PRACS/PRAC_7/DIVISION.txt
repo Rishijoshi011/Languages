@@ -1,0 +1,30 @@
+;Name :- Rishi Joshi 
+;Enrollment :- 031
+
+LXI H,0010H
+MOV A,M
+
+INX H
+
+MOV B,M
+
+MVI C,00H
+LOOP: CMP B
+JM EXIT
+
+SUB B
+INR C
+JMP LOOP
+
+EXIT: INX H
+MOV M,C
+INX H
+MOV M,A
+
+HLT
+
+FLAGS : Z = 0
+	S = 1
+	P = 0
+	C = 1
+	AC = 1

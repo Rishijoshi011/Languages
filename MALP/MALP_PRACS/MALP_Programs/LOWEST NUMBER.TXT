@@ -1,0 +1,17 @@
+LXI H,0000H 
+MVI A,FFH 
+MVI B,05H ; COUNT
+
+;-------------------------------;
+
+BACK:CMP M
+JC MIN
+MOV A,M
+MIN: INX H
+
+DCR B
+JNZ BACK
+
+MOV M,A
+
+HLT

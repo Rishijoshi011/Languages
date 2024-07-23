@@ -1,0 +1,24 @@
+;Name :- Rishi Joshi 
+;Enrollment :- 031
+
+LXI H,0000H
+MOV B,M
+
+LXI H,0010H
+MOV C,M
+
+MVI A,00H
+REPEAT: ADD B
+DCR C
+JNZ REPEAT
+
+LXI H,0020H
+MOV M,A
+
+HLT
+
+FLAGS : Z = 1
+	S = 0
+	P = 1
+	C = 0
+	AC = 1
